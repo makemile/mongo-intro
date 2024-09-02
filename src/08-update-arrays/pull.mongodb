@@ -1,0 +1,30 @@
+use("platzi_store");
+
+// db.inventory.updateMany(
+//   {},
+//   {
+//     $pull: {
+//       tags: "book",
+//     },
+//   }
+// );
+
+// db.inventory.updateMany(
+//     {},
+//     {
+//       $pull: {
+//         tags: "school",
+//       },
+//     }
+//   );
+
+  db.inventory.updateMany(
+    {},
+    {
+      $pull: {
+       tags:{
+        $in: ["school","book"]
+       }
+      },
+    }
+  );
